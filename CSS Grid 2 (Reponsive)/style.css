@@ -1,0 +1,109 @@
+body {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 4rem;
+}
+
+.grid {
+  display: grid;
+  color: white;
+}
+.grid__item {
+  text-transform: uppercase;
+  padding: 1rem;
+}
+.grid__item:first-child {
+  height: 50px;
+  background-color: black;
+}
+.grid__item:nth-child(2) {
+  height: 50px;
+  background-color: red;
+}
+.grid__item:nth-child(3) {
+  height: 200px;
+  background-color: cornflowerblue;
+}
+.grid__item:nth-child(4) {
+  height: 200px;
+  background-color: darkblue;
+}
+.grid__item:nth-child(5) {
+  height: 100px;
+  background-color: yellow;
+}
+.grid__item:nth-child(6) {
+  height: 100px;
+  background-color: green;
+}
+.grid__item:last-child {
+  height: 100px;
+  background-color: cyan;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5rem 20rem 20rem 10rem 10rem;
+    grid-template-areas: "header header header header" "hero hero hero hero" "menu main main main" "menu banner banner banner" "menu extra extra image ";
+  }
+  .grid__item {
+    padding: 1rem;
+  }
+  .grid__item:first-child {
+    grid-area: header;
+  }
+  .grid__item:nth-child(2) {
+    height: auto;
+    grid-area: menu;
+  }
+  .grid__item:nth-child(3) {
+    height: auto;
+    grid-area: hero;
+  }
+  .grid__item:nth-child(4) {
+    grid-area: main;
+  }
+  .grid__item:nth-child(5) {
+    grid-area: banner;
+  }
+  .grid__item:nth-child(6) {
+    grid-area: extra;
+  }
+  .grid__item:last-child {
+    grid-area: image;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .grid {
+    grid-template-rows: 5rem 30rem 10rem 10rem 10rem;
+    grid-template-areas: "header menu menu menu" "hero hero hero hero" "main main . image" "main main . extra" "banner banner banner banner";
+  }
+  .grid__item {
+    padding: 1rem;
+  }
+  .grid__item:first-child {
+    grid-area: header;
+  }
+  .grid__item:nth-child(2) {
+    height: auto;
+    grid-area: menu;
+  }
+  .grid__item:nth-child(3) {
+    grid-area: hero;
+  }
+  .grid__item:nth-child(4) {
+    grid-area: main;
+  }
+  .grid__item:nth-child(5) {
+    grid-area: banner;
+  }
+  .grid__item:nth-child(6) {
+    grid-area: extra;
+  }
+  .grid__item:last-child {
+    grid-area: image;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

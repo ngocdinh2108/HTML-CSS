@@ -1,0 +1,24 @@
+.image-list {
+  display: flex;
+  margin: 5rem 0 0 calc(-1 * 2rem);
+  flex-wrap: wrap;
+}
+
+body {
+  width: 100%;
+}
+
+.image-item {
+  width: calc((100% / 4) - 2rem);
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,15 @@
+$primary-color: #ff695a;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 4rem;
+}
+
+.heading {
+  color: rgb(104, 104, 11);
+}

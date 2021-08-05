@@ -1,0 +1,124 @@
+$primary-color: #ff695a;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 4rem;
+}
+
+.grid {
+  display: grid;
+  color: white;
+  &__item {
+    text-transform: uppercase;
+    padding: 1rem;
+    &:first-child {
+      height: 50px;
+      background-color: black;
+    }
+    &:nth-child(2) {
+      height: 50px;
+      background-color: red;
+    }
+    &:nth-child(3) {
+      height: 200px;
+      background-color: cornflowerblue;
+    }
+    &:nth-child(4) {
+      height: 200px;
+      background-color: darkblue;
+    }
+    &:nth-child(5) {
+      height: 100px;
+      background-color: yellow;
+    }
+    &:nth-child(6) {
+      height: 100px;
+      background-color: green;
+    }
+    &:last-child {
+      height: 100px;
+      background-color: cyan;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5rem 20rem 20rem 10rem 10rem;
+    grid-template-areas:
+      "header header header header"
+      "hero hero hero hero"
+      "menu main main main"
+      "menu banner banner banner"
+      "menu extra extra image ";
+    &__item {
+      padding: 1rem;
+      &:first-child {
+        grid-area: header;
+      }
+      &:nth-child(2) {
+        height: auto;
+        grid-area: menu;
+      }
+      &:nth-child(3) {
+        height: auto;
+        grid-area: hero;
+      }
+      &:nth-child(4) {
+        grid-area: main;
+      }
+      &:nth-child(5) {
+        grid-area: banner;
+      }
+      &:nth-child(6) {
+        grid-area: extra;
+      }
+      &:last-child {
+        grid-area: image;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .grid {
+    grid-template-rows: 5rem 30rem 10rem 10rem 10rem;
+    grid-template-areas:
+      "header menu menu menu"
+      "hero hero hero hero"
+      "main main . image"
+      "main main . extra"
+      "banner banner banner banner";
+    &__item {
+      padding: 1rem;
+      &:first-child {
+        grid-area: header;
+      }
+      &:nth-child(2) {
+        height: auto;
+        grid-area: menu;
+      }
+      &:nth-child(3) {
+        grid-area: hero;
+      }
+      &:nth-child(4) {
+        grid-area: main;
+      }
+      &:nth-child(5) {
+        grid-area: banner;
+      }
+      &:nth-child(6) {
+        grid-area: extra;
+      }
+      &:last-child {
+        grid-area: image;
+      }
+    }
+  }
+}

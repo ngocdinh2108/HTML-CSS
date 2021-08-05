@@ -1,0 +1,7 @@
+.triagle {
+  margin: 10rem auto;
+  background-color: brown;
+  border-left: 5rem solid green;
+  border-top: 5rem solid transparent;
+  border-bottom: 5rem solid transparent;
+}

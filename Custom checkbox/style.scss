@@ -1,0 +1,56 @@
+$primary-color: #ff695a;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.checkbox {
+  height: 10rem;
+  max-width: 40rem;
+  margin: 5rem auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &--default {
+    // display: none;
+    &:checked + {
+      .checkbox__label {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        &::before {
+          border-left-color: white;
+          border-bottom-color: white;
+        }
+      }
+    }
+  }
+  &__label {
+    border: 1px solid #7a8598;
+    position: absolute;
+    @include size(3rem);
+    border-radius: 4px;
+    top: 50%;
+    transition: 0.25s linear;
+    left: 20px;
+    transform: translateY(-50%);
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      @include size(1.3rem, 0.5rem);
+      transform: translate(-50%, -64%) rotate(-45deg);
+      border-left: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      transition: 0.25s linear;
+    }
+  }
+  &__text {
+    padding-left: 4rem;
+  }
+}

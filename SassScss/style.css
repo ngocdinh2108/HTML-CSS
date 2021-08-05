@@ -1,0 +1,52 @@
+body {
+  font-size: 1.6rem;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: #ffa400;
+}
+
+.header-left {
+  color: red;
+}
+.header-left:hover {
+  cursor: pointer;
+  font-size: 2rem;
+}
+.header-right {
+  color: green;
+}
+.header-right:hover {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.header-right-content {
+  color: orchid;
+}
+.header .test {
+  color: blue;
+}
+.header .test:hover {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.boxed {
+  margin: 5rem auto;
+  width: 30rem;
+  height: 30rem;
+  background-color: green;
+  position: relative;
+}
+.boxed-child {
+  width: 10rem;
+  height: 10rem;
+  background-color: orange;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+$primary-color: #00c899;
+$spacing: 1rem;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.work {
+  max-width: 1400px;
+  padding: 2rem;
+  margin: 0 auto;
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+    &::before {
+      position: absolute;
+      content: "";
+      @include size(4rem, 0.5rem);
+      background-color: $primary-color;
+      bottom: 0;
+      left: 0;
+      border-radius: 4px;
+    }
+  }
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  &-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__item {
+      min-width: 6rem;
+      text-align: center;
+      padding: 8px 10px;
+      border: 1px solid $primary-color;
+      border-radius: 2rem 0 2rem 2rem;
+      margin-right: 1.6rem;
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  &__all {
+    text-transform: capitalize;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 4px 6px;
+    color: $primary-color;
+    background-color: rgba($color: $primary-color, $alpha: 0.3);
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * #{$spacing});
+  }
+  &__item {
+    width: calc((100% / 4) - #{$spacing});
+    height: 25rem;
+    border-radius: 1rem;
+    margin-left: $spacing;
+    margin-bottom: $spacing;
+    overflow: hidden;
+  }
+  &__image {
+    @include size(100%);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .work {
+    &__item {
+      width: calc((100% / 2) - #{$spacing});
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .work {
+    &__item {
+      width: 100%;
+    }
+    &__filter {
+      flex-direction: column;
+      justify-content: center;
+    }
+    &-tab {
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      &__item {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
